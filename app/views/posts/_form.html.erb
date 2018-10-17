@@ -1,0 +1,9 @@
+<%= simple_form_for(@post) do |f| %>
+    <%= f.error_notification %>
+    <div class="text">
+        <div class="tweetField">
+            <%= f.input :text, label:"work out today...", autofocus: true %>
+        </div>
+    </div>
+    <%= f.button :submit, class:"button" %>
+<% end %>

@@ -6,9 +6,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header container">
+      <div class="headerLeft">
+        <div class="post"><%= link_to "投稿する", new_post_path %></div>
+      </div>
+      <div class="headerCenter">
+        <div class="title">タイトル</div>
+      </div>
+      <div class="headerRight">
+        <div class="likes">お気に入り</div>
+      </div>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <div class="footerElement container">
+        <div class="home">
+          <%= link_to root_path do %>
+            <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': ''%>"></i>
+          <% end %>
+        </div>
+        <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': ''%>"></i></div>
+        <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': ''%>"></i></div>
+        <div class="profile"><i class="fas fa-user <%= controller.action_name == 'profile' ? 'active': ''%>"></i></div>
+      </div>
+    </div>
   </body>
 </html>

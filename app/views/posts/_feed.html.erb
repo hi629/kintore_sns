@@ -1,0 +1,21 @@
+<div class="postContainer">
+<% @posts.each do |post| %>
+    <div class="post">
+        <div class="postHeader">
+            <div class="postHeaderLeft">
+                <div class="icon">アイコン</div>
+                <div class="username">ユーザー名</div>
+            </div>
+            <div class="postHeaderRight">
+                <div class="followButton">フォローボタン</div>
+            </div>
+        </div>
+        <div class="postImage">
+            画像が来ます。
+        </div>
+        <div class="postText">
+            <%= post.text %>
+        </div>
+    </div>
+<% end %>
+</div>
