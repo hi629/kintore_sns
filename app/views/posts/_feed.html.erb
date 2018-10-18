@@ -4,7 +4,7 @@
         <div class="postHeader">
             <div class="postHeaderLeft">
                 <div class="icon">アイコン</div>
-                <div class="username">ユーザー名</div>
+                <div class="username"><%= post.user.email %></div>
             </div>
             <div class="postHeaderRight">
                 <div class="followButton">フォローボタン</div>
@@ -16,6 +16,9 @@
         <div class="postText">
             <%= post.text %>
         </div>
+        <%= link_to post, method: :delete, data:{ confirm: "Are you sure you want to delete this tweeet?"}  do %>
+            <span class="icon">ffff</span>
+        <% end %>
     </div>
 <% end %>
 </div>

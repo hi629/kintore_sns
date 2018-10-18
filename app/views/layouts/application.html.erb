@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="header container">
       <div class="headerLeft">
         <div class="post"><%= link_to "投稿する", new_post_path %></div>
@@ -18,7 +20,19 @@
         <div class="title">タイトル</div>
       </div>
       <div class="headerRight">
-        <div class="likes">お気に入り</div>
+        <% if user_signed_in? %>
+          <div class="likes">お気に入り</div>
+          <p>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </p>
+        <% else %>
+            <p class="control">
+              <%= link_to "Sign In", new_user_session_path, class:"button is-info" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign up", new_user_registration_path, class:"button is-info" %>
+            </p>
+        <% end %>
       </div>
     </div>
     <div class="container">
@@ -28,12 +42,18 @@
       <div class="footerElement container">
         <div class="home">
           <%= link_to root_path do %>
-            <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': ''%>"></i>
+            <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': 'inactive'%>"></i>
           <% end %>
         </div>
-        <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': ''%>"></i></div>
-        <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': ''%>"></i></div>
-        <div class="profile"><i class="fas fa-user <%= controller.action_name == 'profile' ? 'active': ''%>"></i></div>
+        <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i></div>
+        <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': 'inactive'%>"></i></div>
+        <div class="profile">
+          <% if user_signed_in? %>
+            <%= link_to profile_path(current_user) do %>
+              <i class="fas fa-user <%= controller.action_name == 'show' ? 'active': 'inactive'%>"></i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </body>
