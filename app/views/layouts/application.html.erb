@@ -10,8 +10,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="header container">
       <div class="headerLeft">
         <div class="post"><%= link_to "投稿する", new_post_path %></div>
@@ -35,6 +33,8 @@
         <% end %>
       </div>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="container">
       <%= yield %>
     </div>

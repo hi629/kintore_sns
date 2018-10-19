@@ -1,16 +1,40 @@
 <div class="profileWrap">
     <div class="profileHeader">
-        <div class="profileHeaderLeft"></div>
-        <div class="profileHeaderRight"></div>
-    </div>
-    <div class="profileMiddle">
-        <div class="followNum"></div>
-        <div class="followerNum"></div>
-        <div class="likeNum"></div>
-    </div>
-    <div class="profileBottom">
-        <div class="profileText">
+        <div class="profileHeaderLeft">
+            <div class="profileImage">画像が来ます</div>
+        </div>
+        <div class="profileHeaderRight">
+            <div class="profileNumWrap">
+                <div class="profileNumLeft">
+                    <div class="profileNumTitle">フォロー中</div>
+                    <div class="profileNum">2</div>
+                </div>
+                <div class="profileNumCenter">
+                    <div class="profileNumTitle">フォロワー</div>
+                    <div class="profileNum">2</div>
+                </div>
+                <div class="profileNumRight">
+                    <div class="profileNumTitle">ライク</div>
+                    <div class="profileNum">2</div>
+                </div>
+            </div>
+            <p class="profileEdit">
+                <%= link_to "プロフィール編集", edit_user_registration_path %>
+            </p>
         </div>
     </div>
-    
+    <div class="profileBottom">
+        <p class="profileName">ユーザー名</p>
+        <p class="profileText">自己紹介の文がここに入ります。</p>
+    </div>
+</div>
+<div class="profileImagesWrap">
+    <div class="profileImagesList">
+        <div class="postedImage">イメージ</div>
+        <div class="postedImage">イメージ</div>
+        <div class="postedImage">イメージ</div>
+        <div class="postedImage">イメージ</div>
+        <div class="postedImage">イメージ</div>
+        <div class="postedImage">イメージ</div>
+    </div>
 </div>
