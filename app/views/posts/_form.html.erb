@@ -1,8 +1,10 @@
 <%= simple_form_for(@post) do |f| %>
     <%= f.error_notification %>
     <div class="text">
-        <div class="tweetField">
+        <div class="postField">
             <%= f.input :text, label:"work out today...", autofocus: true %>
+            <p>写真</p>
+            <%= f.file_field :image %>
         </div>
     </div>
     <%= f.button :submit, class:"button" %>

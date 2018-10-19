@@ -30,11 +30,8 @@
 </div>
 <div class="profileImagesWrap">
     <div class="profileImagesList">
-        <div class="postedImage">イメージ</div>
-        <div class="postedImage">イメージ</div>
-        <div class="postedImage">イメージ</div>
-        <div class="postedImage">イメージ</div>
-        <div class="postedImage">イメージ</div>
-        <div class="postedImage">イメージ</div>
+        <% @posts.each do |post| %>
+            <div class="postedImageWrap"><%= image_tag post.image.url, class:"postedImage"  unless post.image.blank? %></div>
+        <% end %>
     </div>
 </div>

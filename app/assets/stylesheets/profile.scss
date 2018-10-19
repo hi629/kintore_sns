@@ -30,8 +30,12 @@
     display: flex;
     flex-wrap: wrap;
 }
-.postedImage{
+.postedImageWrap{
     width:33.3%;
-    height: width;
-    background-color:red;
+    height: 300px;
+    .postedImage{
+        object-fit: cover;
+        width:100%;
+        height:100%;
+    }
 }

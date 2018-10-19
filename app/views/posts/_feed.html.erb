@@ -10,15 +10,15 @@
                 <div class="followButton">フォローボタン</div>
             </div>
         </div>
-        <div class="postImage">
-            画像が来ます。
+        <div class="postImageWrap">
+            <%= image_tag post.image.url, class:"postImage" unless post.image.blank? %>
         </div>
         <div class="postText">
             <%= post.text %>
         </div>
         <% if user_signed_in? && post.user.id == current_user.id %>
             <%= link_to post, method: :delete, data:{ confirm: "Are you sure you want to delete this tweeet?"}  do %>
-                <span class="icon">ffff</span>
+                <span class="icon">投稿を消す</span>
             <% end %>
         <% end %>
     </div>
