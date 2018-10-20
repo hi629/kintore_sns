@@ -1,8 +1,9 @@
 //postページに関わるcssです。
 .postContainer{
     .post{
-        border:1px black solid;
-        margin-bottom:10px; 
+        background-color:#FFF;
+        border-bottom:1px solid #EEE;
+        padding-bottom:10px; 
         .postHeader{
             display: flex;
             flex-direction: row;
@@ -11,16 +12,33 @@
                 flex-direction: row;
                 .iconWrap{
                     .icon{
-                        //仮置き
                         width:65px;
                         height:65px;
                         object-fit: cover;
                         border-radius:50%;
+                        margin:10px;
                     }
+                    .fa-user{
+                        color:gray;
+                        font-size:30px;
+                        padding:17px;
+                        font-size:30px;
+                        border:0.5px solid gray;
+                        border-radius:50%;
+                        margin:10px;
+                    }
+                }
+                .name{
+                    line-height: 5;
+                    margin-left:10px;
                 }
             }
             .postHeaderRight{
                 margin-left:auto;
+                .fa-user-plus{
+                    font-size:20px;
+                    margin:25px;
+                }
             }
         }
         .postImageWrap{

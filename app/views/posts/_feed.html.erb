@@ -3,11 +3,21 @@
     <div class="post">
         <div class="postHeader">
             <div class="postHeaderLeft">
-                <div class="iconWrap"><%= image_tag post.user.avatar.url, class:"icon" if post.user.avatar.url.present? %></div>
-                <div class="username"><%= post.user.email %></div>
+                <div class="iconWrap">
+                <% if post.user.avatar.url.present? %>
+                    <%= link_to post.user do %>
+                    <%= image_tag post.user.avatar.url, class:"icon"%>
+                    <% end %>
+                <% else %>
+                    <%= link_to post.user do %>
+                        <i class="fas fa-user"></i>
+                    <% end %>
+                <% end %>
+                </div>
+                <div class="name"><%= post.user.name %></div>
             </div>
             <div class="postHeaderRight">
-                <div class="followButton">フォローボタン</div>
+                <div class="followButton"><i class="fas fa-user-plus"></i></div>
             </div>
         </div>
         <div class="postImageWrap">

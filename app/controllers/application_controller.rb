@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end  
+
+    def authenticate?
+      return if logged_in?
+      redirect_to root_path, notice:"Please log in."
+    end
 end

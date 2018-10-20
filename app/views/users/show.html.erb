@@ -2,7 +2,13 @@
 <div class="profileWrap">
     <div class="profileHeader">
         <div class="profileHeaderLeft">
-            <div class="profileImage"><%= image_tag @user.avatar.url, class:"profileAvatar" if @user.avatar.present? %></div>
+            <div class="profileImage">
+                <% if  @user.avatar.present? %>
+                    <%= image_tag @user.avatar.url, class:"profileAvatar" %>
+                <% else %>
+                    <i class="fas fa-user"></i>
+                <% end %>
+            </div>
         </div>
         <div class="profileHeaderRight">
             <div class="profileNumWrap">
@@ -23,7 +29,7 @@
                     <div class="profileNum">2</div>
                 </div>
             </div>
-            <% if current_user.id == @user.id %>
+            <% if user_signed_in? && current_user.id == @user.id %>
                 <p class="profileEdit">
                     <%= link_to "プロフィール編集", edit_user_registration_path %>
                 </p>

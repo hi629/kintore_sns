@@ -1,5 +1,7 @@
 //全体のページに関わるCSSです。
-
+body{
+    background-color:#EEE;
+}
 
 // 全体のラッパー
 .container{
@@ -10,23 +12,56 @@
 
 //ヘッダー
 .header{
-    display:flex;
-    flex-direction:row;
-    background-color: black;
-    .headerLeft{
-        background-color: red;
+    background-color:#FFF;
+    .container{
+        display:flex;
+        flex-direction:row;
     }
-    .headerCenter{
-        background-color: yellow;
-        display: flex;
-        justify-content: center;
-        width:100%;
-        .title{
-
+    .headerLeft{
+        width:20%;
+        .fa-plus-square{
+            font-size:40px;
+            color:royalblue;
+            margin:20px;
         }
     }
+    .headerCenter{
+        display: flex;
+        justify-content: center;
+        width:50%;
+        align-items: center;
+    }
     .headerRight{
-        background-color: green;
+        width:30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .headerRightLogin,.headerRightReg{
+            text-decoration: none;
+        }
+        .headerRightLoginWrap{
+            background-color:royalblue;
+            border:1px solid royalblue;
+            border-radius:4px;
+            height:30px;
+            cursor: pointer;
+            padding:0;
+            .headerRightLogin{
+                color:#FFF;
+                padding:10px 15px;
+            }
+        }
+        .headerRightRegWrap{
+            margin-left:10px;
+            border:none;
+            cursor: pointer;
+            height:30px;
+            .headerRightReg{
+                color:royalblue;
+            }
+
+        }
+        
     }
 }
 
@@ -36,7 +71,7 @@
     position: fixed;
     bottom:0;
     z-index: 10;
-    background-color: green;
+    background-color: royalblue;
     .footerElement{
         display: flex;
         flex-direction: row;
@@ -46,7 +81,6 @@
         text-align: center;
         font-size:20px;
         padding-top:10px;
-        padding-bottom:10px;
     }
     .fas{
         padding:10px 20px;
