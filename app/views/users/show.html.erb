@@ -1,3 +1,4 @@
+<% @user ||= current_user %>
 <div class="profileWrap">
     <div class="profileHeader">
         <div class="profileHeaderLeft">
@@ -6,12 +7,16 @@
         <div class="profileHeaderRight">
             <div class="profileNumWrap">
                 <div class="profileNumLeft">
-                    <div class="profileNumTitle">フォロー中</div>
-                    <div class="profileNum">2</div>
+                    <%= link_to following_user_path(@user) do %>
+                        <div class="profileNumTitle">フォロー中</div>
+                        <div class="profileNum"><%= @user.following.count %></div>
+                    <% end %>
                 </div>
                 <div class="profileNumCenter">
-                    <div class="profileNumTitle">フォロワー</div>
-                    <div class="profileNum">2</div>
+                    <%= link_to followers_user_path(@user) do %>
+                        <div class="profileNumTitle">フォロワー</div>
+                        <div class="profileNum"><%= @user.followers.count %></div>
+                    <% end %>
                 </div>
                 <div class="profileNumRight">
                     <div class="profileNumTitle">ライク</div>
@@ -23,11 +28,13 @@
             </p>
         </div>
     </div>
+    <%= render 'follow_form' if user_signed_in? %>
     <div class="profileBottom">
-        <p class="profileName">ユーザー名</p>
+        <p class="profileName"><%= @user.email %></p>
         <p class="profileText">自己紹介の文がここに入ります。</p>
     </div>
 </div>
+
 <div class="profileImagesWrap">
     <div class="profileImagesList">
         <% @posts.each do |post| %>

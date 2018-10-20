@@ -49,7 +49,7 @@
         <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': 'inactive'%>"></i></div>
         <div class="profile">
           <% if user_signed_in? %>
-            <%= link_to profile_path(current_user) do %>
+            <%= link_to user_path(current_user) do %>
               <i class="fas fa-user <%= controller.action_name == 'show' ? 'active': 'inactive'%>"></i>
             <% end %>
           <% end %>
