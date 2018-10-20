@@ -8,7 +8,9 @@
 <h3><%= @title %></h3>
 <% if @users.any? %>
     <ul class="users follow">
-    <%= render @users %>
+    <% @users.each do |user| %>
+        <%= user.email %>
+    <% end %>
     </ul>
 <% end %>
 </div>
