@@ -9,6 +9,14 @@
             .postHeaderLeft{
                 display: flex;
                 flex-direction: row;
+                .iconWrap{
+                    .icon{
+                        //仮置き
+                        width:100px;
+                        height:100px;
+                        object-fit: cover;
+                    }
+                }
             }
             .postHeaderRight{
                 margin-left:auto;

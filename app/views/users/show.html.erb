@@ -2,7 +2,7 @@
 <div class="profileWrap">
     <div class="profileHeader">
         <div class="profileHeaderLeft">
-            <div class="profileImage">画像が来ます</div>
+            <div class="profileImage"><%= image_tag @user.avatar.url, class:"profileAvatar" if @user.avatar.present? %></div>
         </div>
         <div class="profileHeaderRight">
             <div class="profileNumWrap">
@@ -23,15 +23,18 @@
                     <div class="profileNum">2</div>
                 </div>
             </div>
-            <p class="profileEdit">
-                <%= link_to "プロフィール編集", edit_user_registration_path %>
-            </p>
+            <% if current_user.id == @user.id %>
+                <p class="profileEdit">
+                    <%= link_to "プロフィール編集", edit_user_registration_path %>
+                </p>
+            <% end %>
         </div>
     </div>
     <%= render 'follow_form' if user_signed_in? %>
     <div class="profileBottom">
-        <p class="profileName"><%= @user.email %></p>
-        <p class="profileText">自己紹介の文がここに入ります。</p>
+        <p class="profileName">ユーザー名<%= @user.name %></p>
+        <p class="profileName">ユーザーID<%= @user.username %></p>
+        <p class="profileText"><%= @user.introduce %></p>
     </div>
 </div>
 

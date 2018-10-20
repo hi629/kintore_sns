@@ -3,6 +3,14 @@
     flex-direction: row;
     .profileHeaderLeft{
         width:25%;
+        .profileImage{
+            .profileAvatar{
+                //仮置き
+                width:100px;
+                height:100px;
+                object-fit: cover;
+            }
+        }
     }
     .profileHeaderRight{
         width:70%;
