@@ -9,13 +9,13 @@
                 <div class="profileNumLeft">
                     <%= link_to following_user_path(@user) do %>
                         <div class="profileNumTitle">フォロー中</div>
-                        <div class="profileNum"><%= @user.following.count %></div>
+                        <div class="profileNum" id="following"><%= @user.following.count %></div>
                     <% end %>
                 </div>
                 <div class="profileNumCenter">
                     <%= link_to followers_user_path(@user) do %>
                         <div class="profileNumTitle">フォロワー</div>
-                        <div class="profileNum"><%= @user.followers.count %></div>
+                        <div class="profileNum" id="followers"><%= @user.followers.count %></div>
                     <% end %>
                 </div>
                 <div class="profileNumRight">
