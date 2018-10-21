@@ -121,7 +121,7 @@ h2{
     position: fixed;
     bottom:0;
     z-index: 10;
-    border-top: #EEE;
+    border-top: #EEE solid 1px;
     background-color: #FFF;
     .footerElement{
         display: flex;
@@ -136,9 +136,6 @@ h2{
     }
     .fas{
         padding:10px 20px;
-        @media (min-width: $widthSp) and (max-width: ($widthTb)) {
-            padding-top: 50px;
-         }   
     }
     .active{
         color:royalblue;
