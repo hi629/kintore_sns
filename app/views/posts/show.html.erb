@@ -3,9 +3,13 @@
         <div class="cardHeaderLeft">
             <div class="profileImage">
                 <% if  @user.avatar.present? %>
+                    <%= link_to @user do %>
                     <%= image_tag @user.avatar.url, class:"profileAvatar" %>
+                    <% end %>
                 <% else %>
+                    <%= link_to @user do %>
                     <i class="fas fa-user"></i>
+                    <% end %>
                 <% end %>
             </div>
             <div class="postCardName"><%= @user.name %></div>

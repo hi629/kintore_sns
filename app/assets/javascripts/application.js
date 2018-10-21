@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require rails-ujs
+//= require infinite-scroll.pkgd.min
 //= require turbolinks
 //= require_tree .
