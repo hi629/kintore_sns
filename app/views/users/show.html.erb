@@ -49,18 +49,18 @@
     </div>
     <div class="profileBottom">
         <p class="profileName"><%= @user.name %>さん</p>
-        <br>
         <p class="profileText"><%= @user.introduce %></p>
     </div>
 </div>
 
-<div class="profileImagesWrap">
-    <div class="profileImagesList">
-        <% if @posts.blank? %>
-            <p>まだ投稿はありません。</p>
-        <% end %>
-        <% @posts.each do |post| %>
-            <div class="postedImageWrap"><%= image_tag post.image.url, class:"postedImage"  unless post.image.blank? %></div>
+<div class="newPostList">
+    <% @posts.each do |post| %>
+    <div class="newPostItem">
+        <% if !post.image.blank? %>
+            <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
+                <%= image_tag(post.image.url, class:"newPostImage")%>
+            <% end %>
         <% end %>
     </div>
+    <% end %>
 </div>

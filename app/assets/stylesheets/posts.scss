@@ -12,17 +12,16 @@
                 flex-direction: row;
                 .iconWrap{
                     .icon{
-                        width:65px;
-                        height:65px;
+                        width:48px;
+                        height:48px;
                         object-fit: cover;
                         border-radius:50%;
                         margin:10px;
                     }
                     .fa-user{
                         color:gray;
-                        font-size:30px;
+                        font-size:20px;
                         padding:17px;
-                        font-size:30px;
                         border:0.5px solid gray;
                         border-radius:50%;
                         margin:10px;
@@ -35,10 +34,6 @@
             }
             .postHeaderRight{
                 margin-left:auto;
-                .fa-user-plus{
-                    font-size:20px;
-                    margin:25px;
-                }
             }
         }
         .postImageWrap{
@@ -66,6 +61,7 @@
 // posts#showページ
 .postCard{
     background-color:#FFF;
+    
 }
 .postCardName{
     line-height: 4;
@@ -74,7 +70,6 @@
 .cardHeader{
     display: flex;
     flex-direction: row;
-    margin-bottom: 30px;
     padding: 10px 0px 0px;
     border-bottom: #EEE solid 1px;
     .cardHeaderRight{
@@ -92,7 +87,6 @@
 }
 .cardImageWrap{
     text-align: center;
-    padding-bottom:300px;
 }
 .cardImage{
     max-width:80%;
@@ -102,4 +96,11 @@
 .cardBottom{
     border-top: #EEE solid 1px;
     padding-top: 20px;
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+
+// post#new
+.newPostWrap{
+    margin-top: 15px;
 }
