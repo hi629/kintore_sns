@@ -1,1 +1,11 @@
+<div class="tab">
+    <%= link_to root_path, class:"tabLeft" do %>
+        <div>新着</div>
+    <% end %>
+    <%= link_to posts_path, class:"tabRight-active" do %>
+        <div>フォロー中</div>
+    <% end %>
+</div>
+<br>
+
 <%= render "feed" %>

@@ -21,13 +21,15 @@
         </div>
         <div class="headerCenter">
           <div class="title">
-            <%= link_to "タイトル", root_path %>
+            <%= link_to root_path do %>
+              <%= image_tag("LOGO.png", class:"titleImage") %>
+            <% end %>
           </div>
         </div>
         <div class="headerRight">
           <% if user_signed_in? %>
-            <p>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <p class="headerRightLogoutWrap">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"headerRightLogout" %>
             </p>
           <% else %>
               <button class="headerRightLoginWrap">
@@ -39,9 +41,9 @@
           <% end %>
         </div>
       </div>
+      <p class="notice" style="margin:0;"><%= notice %></p>
+      <p class="alert" style="margin:0;"><%= alert %></p>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="container">
       <%= yield %>
     </div>
@@ -49,7 +51,7 @@
       <div class="footerElement container">
         <div class="home">
           <%= link_to root_path do %>
-            <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': 'inactive'%>"></i>
+            <i class="fas fa-home <%= controller.action_name == 'index'|| 'home' ? 'active': 'inactive'%>"></i>
           <% end %>
         </div>
         <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i></div>

@@ -1,0 +1,29 @@
+<div class="postCard">
+    <div class="cardHeader">
+        <div class="cardHeaderLeft">
+            <div class="profileImage">
+                <% if  @user.avatar.present? %>
+                    <%= image_tag @user.avatar.url, class:"profileAvatar" %>
+                <% else %>
+                    <i class="fas fa-user"></i>
+                <% end %>
+            </div>
+            <div class="postCardName"><%= @user.name %></div>
+        </div>
+        <div class="cardHeaderRight">
+            <% unless current_user?(@user) %>
+            <div id="follow_form">
+            <% if current_user.following?(@user) %>
+                <%= render 'users/unfollow' %>
+            <% else %>
+                <%= render 'users/follow' %>
+            <% end %>
+            </div>
+            <% end %>            
+        </div>
+    </div>
+    <div class="cardImageWrap"><%= image_tag(@post.image.url, class:"cardImage") %></div>
+    <div class="cardBottom">
+        <%= @post.text %>
+    </div>
+</div>

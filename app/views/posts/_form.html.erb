@@ -1,11 +1,15 @@
-<%= simple_form_for(@post) do |f| %>
-    <%= f.error_notification %>
-    <div class="text">
-        <div class="postField">
-            <%= f.input :text, label:"work out today...", autofocus: true %>
-            <p>写真</p>
-            <%= f.file_field :image %>
+<div class="formWrap">
+    <h2>トレーニング記録をアップロードする</h2>
+    <%= simple_form_for(@post) do |f| %>
+        <%= f.error_notification %>
+        <div class="text">
+            <div class="postField">
+                <p>写真をアップロード</p>
+                <p><%= f.file_field :image, required: true %></p>
+                <br>
+                <%= f.input :text, autofocus: true, label:false, placeholder:"トレーニング記録を残そう!", input_html:{class:"postFieldText"} %>
+            </div>
         </div>
-    </div>
-    <%= f.button :submit, class:"button" %>
-<% end %>
+        <%= f.button :submit, "投稿する", class:"formButton" %>
+    <% end %>
+</div>

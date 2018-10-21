@@ -1,0 +1,62 @@
+//homeに関するcssです。
+
+//tab
+.tab{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: #fff;
+    border-top: #eee 1px solid;
+    font-size:12px;
+}
+.tabLeft-active, .tabRight-active{
+    color: royalblue;
+    border-bottom: royalblue solid 2px;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50%;
+}
+.tabLeft, .tabRight{
+    color: royalblue;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50%;
+}
+
+
+.newPostList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.newPostItem{
+    flex-basis: 33.3%;
+    position: relative;
+}
+// 正方形にトリミング
+.newPostItem:before{
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+.newPostLink{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.newPostImage{
+    width:100%;
+    height: 100%;
+    line-height:1;
+    position: absolute;
+    bottom:0;
+    border: 1px solid #fff;
+    object-fit: cover;
+}

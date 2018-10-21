@@ -50,5 +50,56 @@
             }
         }
     }
+}
 
+.postText{
+    margin-top:20px;
+    margin-left:3%;
+}
+.postFieldText{
+    width:50%;
+    height:100px;
+    max-width:50%;
+    max-height:100px;
+}
+
+// posts#showページ
+.postCard{
+    background-color:#FFF;
+}
+.postCardName{
+    line-height: 4;
+    margin-left: 10px;
+}
+.cardHeader{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    padding: 10px 0px 0px;
+    border-bottom: #EEE solid 1px;
+    .cardHeaderRight{
+        display: flex;
+        flex-direction: row;
+        margin-left:auto;
+        margin-right:10px;
+        margin-top: 10px;
+    }
+    .cardHeaderLeft{
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+    }
+}
+.cardImageWrap{
+    text-align: center;
+    padding-bottom:300px;
+}
+.cardImage{
+    max-width:80%;
+    max-height:500px;
+}
+
+.cardBottom{
+    border-top: #EEE solid 1px;
+    padding-top: 20px;
 }

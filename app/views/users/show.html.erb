@@ -1,5 +1,16 @@
 <% @user ||= current_user %>
 <div class="profileWrap">
+    <% if user_signed_in? %>
+        <% unless current_user?(@user) %>
+        <div id="follow_form" class="followFormPosition">
+        <% if current_user.following?(@user) %>
+            <%= render 'unfollow' %>
+        <% else %>
+            <%= render 'follow' %>
+        <% end %>
+        </div>
+        <% end %>    
+    <% end %>
     <div class="profileHeader">
         <div class="profileHeaderLeft">
             <div class="profileImage">
@@ -13,39 +24,41 @@
         <div class="profileHeaderRight">
             <div class="profileNumWrap">
                 <div class="profileNumLeft">
+                    <div class="profileNumTitle">フォロー中</div>
                     <%= link_to following_user_path(@user) do %>
-                        <div class="profileNumTitle">フォロー中</div>
                         <div class="profileNum" id="following"><%= @user.following.count %></div>
                     <% end %>
                 </div>
                 <div class="profileNumCenter">
+                    <div class="profileNumTitle">フォロワー</div>
                     <%= link_to followers_user_path(@user) do %>
-                        <div class="profileNumTitle">フォロワー</div>
                         <div class="profileNum" id="followers"><%= @user.followers.count %></div>
                     <% end %>
                 </div>
                 <div class="profileNumRight">
-                    <div class="profileNumTitle">ライク</div>
-                    <div class="profileNum">2</div>
+                    <div class="profileNumTitle">投稿数</div>
+                    <div class="profileNum"><%= @user.posts.count %></div>
                 </div>
             </div>
             <% if user_signed_in? && current_user.id == @user.id %>
                 <p class="profileEdit">
-                    <%= link_to "プロフィール編集", edit_user_registration_path %>
+                    <%= link_to "プロフィール編集", edit_user_registration_path, class:"profileFormButton" %>
                 </p>
             <% end %>
         </div>
     </div>
-    <%= render 'follow_form' if user_signed_in? %>
     <div class="profileBottom">
-        <p class="profileName">ユーザー名<%= @user.name %></p>
-        <p class="profileName">ユーザーID<%= @user.username %></p>
+        <p class="profileName"><%= @user.name %>さん</p>
+        <br>
         <p class="profileText"><%= @user.introduce %></p>
     </div>
 </div>
 
 <div class="profileImagesWrap">
     <div class="profileImagesList">
+        <% if @posts.blank? %>
+            <p>まだ投稿はありません。</p>
+        <% end %>
         <% @posts.each do |post| %>
             <div class="postedImageWrap"><%= image_tag post.image.url, class:"postedImage"  unless post.image.blank? %></div>
         <% end %>

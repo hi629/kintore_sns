@@ -1,0 +1,20 @@
+<div class="tab">
+    <%= link_to root_path, class:"tabLeft-active" do %>
+        <div>新着</div>
+    <% end %>
+    <%= link_to posts_path, class:"tabRight" do %>
+        <div>フォロー中</div>
+    <% end %>
+</div>
+<br>
+<div class="newPostList">
+    <% @posts.each do |post| %>
+    <div class="newPostItem">
+        <% if !post.image.blank? %>
+            <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
+                <%= image_tag(post.image.url, class:"newPostImage")%>
+            <% end %>
+        <% end %>
+    </div>
+    <% end %>
+</div>

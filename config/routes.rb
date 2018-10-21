@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :posts
 
   resources :relationships, only:[:create, :destroy]
-  root "posts#index"
+  # root "posts#index"
+  root "pages#home"
 
   resources :users do
     member do

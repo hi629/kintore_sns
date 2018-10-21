@@ -9,14 +9,14 @@ class UsersController < ApplicationController
     end
 
     def following
-        @title = "Following"
+        @title = "フォロー中"
         @user = User.find(params[:id])
         @users = @user.following
         render 'show_follow' #actionに対応するビューを呼び出すが、明示的にshow_followと記述し、show_followビューを表示させる
     end
 
     def followers
-        @title = "Followers"
+        @title = "フォロワー"
         @user = User.find(params[:id])
         @users = @user.followers
         render 'show_follow'

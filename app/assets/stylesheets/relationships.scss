@@ -1,3 +1,44 @@
 // Place all the styles related to the Relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.relationshipWrap{
+    background-color:#FFF;
+    padding:10px;
+    padding-bottom: 500px;
+    margin-bottom:150px;
+    h3{
+        border-bottom: 1px solid royalblue;
+        padding-bottom: 5px;
+    }
+    
+    .fa-user{
+        color:gray;
+        font-size:30px;
+        padding:17px;
+        font-size:30px;
+        border:0.5px solid gray;
+        border-radius:50%;
+        margin:10px;
+    }
+    .icon{
+        width:65px;
+        height:65px;
+        object-fit: cover;
+        border-radius:50%;
+        margin:10px;
+    }
+    .relationshipItem{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .relationshipItemName{
+        margin-left:10px;
+    }
+    .relationshipItemRight{
+        margin-left:auto;
+        margin-right:15px;
+    }
+}
