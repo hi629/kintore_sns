@@ -51,7 +51,7 @@
       <div class="footerElement container">
         <div class="home">
           <%= link_to root_path do %>
-            <i class="fas fa-home <%= controller.action_name == 'index'|| 'home' ? 'active': 'inactive'%>"></i>
+            <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': 'inactive'%>"></i>
           <% end %>
         </div>
         <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i></div>

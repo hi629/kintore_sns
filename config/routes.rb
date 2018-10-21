@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :relationships, only:[:create, :destroy]
   # root "posts#index"
-  root "pages#home"
+  root "pages#index"
 
   resources :users do
     member do

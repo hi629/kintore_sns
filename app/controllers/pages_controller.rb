@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-    def home
+    def index
         @posts = Post.all.order("created_at DESC")
     end
 end
