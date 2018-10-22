@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  # current_passwordなしで更新
   attr_accessor :current_password
   
   mount_uploader :avatar, ImageUploader
@@ -14,6 +15,8 @@ class User < ApplicationRecord
   
   has_many :following, through: :active_relationships, source: :followed #followedsは英語的におかしいので、source: :followedと明示的に別記する。
   has_many :followers, through: :passive_relationships, source: :follower
+
+  has_many :likes, dependent: :destroy
 
   def follow(other_user)
     following << other_user

@@ -15,15 +15,17 @@
             <div class="postCardName"><%= @user.name %></div>
         </div>
         <div class="cardHeaderRight">
-            <% unless current_user?(@user) %>
-            <div id="follow_form">
-            <% if current_user.following?(@user) %>
-                <%= render 'users/unfollow' %>
-            <% else %>
-                <%= render 'users/follow' %>
+            <% if user_signed_in? %>
+                <% unless current_user?(@user) %>
+                <div id="follow_form">
+                <% if current_user.following?(@user) %>
+                    <%= render 'users/unfollow' %>
+                <% else %>
+                    <%= render 'users/follow' %>
+                <% end %>
+                </div>
+                <% end %>        
             <% end %>
-            </div>
-            <% end %>        
             <% if user_signed_in? && @post.user.id == current_user.id %>
                 <%= link_to @post, method: :delete, data:{ confirm: "本当に消しますか？"}  do %>
                     <span class="icon">投稿を消す</span>

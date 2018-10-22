@@ -26,9 +26,6 @@ h2{
 //ヘッダー
 .header{
     background-color:#FFF;
-    @media (min-width: $widthSp) and (max-width: ($widthTb)) {
-        padding-top:20px;
-     }
     .container{
         display:flex;
         flex-direction:row;
@@ -36,12 +33,12 @@ h2{
     .headerLeft{
         width:20%;
         .fa-plus-square{
-            font-size:40px;
+            font-size:30px;
             color:royalblue;
             margin:20px;
             @media (min-width: $widthSp) and (max-width: ($widthTb)) {
                 margin-left:20%;
-                font-size:40px;
+                font-size:25px;
              }
         }
     }
