@@ -54,7 +54,11 @@
             <i class="fas fa-home <%= controller.action_name == 'index' ? 'active': 'inactive'%>"></i>
           <% end %>
         </div>
-        <div class="search"><i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i></div>
+        <div class="search">
+          <%= link_to search_path do %>
+            <i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i>
+          <% end %>
+        </div>
         <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': 'inactive'%>"></i></div>
         <div class="profile">
           <% if user_signed_in? %>

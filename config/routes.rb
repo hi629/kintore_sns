@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "pages#index"
   get '/posts/hashtag/:name', to:'posts#hashtags'
+  get 'search' => 'pages#search'
 
   resources :users do
     member do

@@ -1,0 +1,16 @@
+<%= form_tag search_path, :method => 'get' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<div class="newPostList">
+    <% @posts.each do |post| %>
+    <div class="newPostItem">
+        <% if !post.image.blank? %>
+            <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
+                <%= image_tag(post.image.url, class:"newPostImage")%>
+            <% end %>
+        <% end %>
+    </div>
+    <% end %>
+</div>

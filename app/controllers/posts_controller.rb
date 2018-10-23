@@ -22,6 +22,9 @@ class PostsController < ApplicationController
         @posts = tag.posts
     end
 
+    def search
+    end
+
     def edit
         @post = Post.find(params[:id])
     end

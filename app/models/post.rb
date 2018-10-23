@@ -26,6 +26,14 @@ class Post < ApplicationRecord
         end
     end
 
+    def self.search(search)
+        if search
+            where(['text LIKE ?', "%#{search}"]) 
+        else
+            all
+        end
+    end
+
     def like(user)
         likes.create(user_id:user.id)
     end
