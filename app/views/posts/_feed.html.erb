@@ -24,7 +24,7 @@
             <%= image_tag post.image.url, class:"postImage" unless post.image.blank? %>
         </div>
         <div class="postText">
-            <%= post.text %>
+            <%= render_with_hashtags(post.text) %>
         </div>
         <%= render "likes/like", post: post %>
         <% if user_signed_in? && post.user.id == current_user.id %>

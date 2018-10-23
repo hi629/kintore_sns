@@ -35,6 +35,6 @@
     </div>
     <div class="cardImageWrap"><%= image_tag(@post.image.url, class:"cardImage") %></div>
     <div class="cardBottom">
-        <%= @post.text %>
+        <%= render_with_hashtags(@post.text) %>
     </div>
 </div>

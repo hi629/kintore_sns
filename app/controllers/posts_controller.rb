@@ -17,7 +17,13 @@ class PostsController < ApplicationController
         @post = current_user.posts.build
     end
 
+    def hashtags
+        tag = Tag.find_by(name:params[:name])
+        @posts = tag.posts
+    end
+
     def edit
+        @post = Post.find(params[:id])
     end
 
     def create
