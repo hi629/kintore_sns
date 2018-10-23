@@ -5,6 +5,7 @@ $widthSp:68px;
 //全体のページに関わるCSSです。
 body{
     background-color:#EEE;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h2{
     @media (min-width: $widthSp) and (max-width: ($widthTb)) {

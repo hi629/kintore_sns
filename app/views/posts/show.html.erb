@@ -35,6 +35,14 @@
     </div>
     <div class="cardImageWrap"><%= image_tag(@post.image.url, class:"cardImage") %></div>
     <div class="cardBottom">
-        <%= render_with_hashtags(@post.text) %>
+        <div><%= render_with_hashtags(@post.text) %></div>
+        <div id="comments_area"><%= render partial:'comments/index', locals:{ comments: @comments} %></div>
+        <% if user_signed_in? %>
+            <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+            <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+        <% else %>
+            <p>ログイン/登録してコメントを書き込みませんか？</p>
+        <% end %>
+
     </div>
 </div>

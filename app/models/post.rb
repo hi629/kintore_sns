@@ -4,6 +4,8 @@ class Post < ApplicationRecord
     validates :image, presence: true
     has_many :likes, dependent: :destroy
     has_many :like_users, through: :likes, source: :user
+
+    has_many :comments, dependent: :destroy
     
     has_and_belongs_to_many :tags
 

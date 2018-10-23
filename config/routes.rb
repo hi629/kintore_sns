@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :likes, only:[:create, :destroy]
   devise_for :users, :controllers => {:registrations=> "registrations"}
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resources :relationships, only:[:create, :destroy]
   # root "posts#index"
