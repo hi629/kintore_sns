@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :relationships, only:[:create, :destroy]
   # root "posts#index"
   root "pages#index"
+  
   get '/posts/hashtag/:name', to:'posts#hashtags'
   get 'search' => 'pages#search'
+  get '/about' => 'pages#about'
 
   resources :users do
     member do

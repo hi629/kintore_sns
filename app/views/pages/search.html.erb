@@ -1,9 +1,9 @@
-<%= form_tag search_path, :method => 'get' do %>
+<%= form_tag search_path, :method => 'get', class:"container" do %>
   <%= text_field_tag :search %>
   <%= submit_tag 'Search', :name => nil %>
 <% end %>
 
-<div class="newPostList">
+<div class="newPostList container">
     <% @posts.each do |post| %>
     <div class="newPostItem">
         <% if !post.image.blank? %>

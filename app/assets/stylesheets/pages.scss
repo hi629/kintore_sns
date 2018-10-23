@@ -1,6 +1,29 @@
 //homeに関するcssです。
 
+//welcome
+.welcome{
+    padding-top:30px;
+    padding-bottom: 30px;
+    background-color: lightblue;
+    p{
+        margin: 0;
+        text-align: center;
+    }
+}
+.welcomeLetter{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 14px;
+    background-color: royalblue;
+    padding:5px;
+    border:1px solid royalblue;
+    border-radius: 4px;
+}
+
 //tab
+.tabWrap{
+    background-color: #FFF;
+}
 .tab{
     display: flex;
     flex-direction: row;
@@ -60,3 +83,14 @@
     border: 1px solid #fff;
     object-fit: cover;
 }
+
+//pages#aboutページに関するcssです。
+.fixContainer{
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+    width:90%;
+    max-width: 600px;
+    background-color: #FFF;
+}
+//pages#searchページに関するcssです。

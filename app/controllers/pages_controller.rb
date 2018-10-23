@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     def search
         @posts = Post.all.search(params[:search])
     end
+
+    def about
+    end
 end
