@@ -6,9 +6,9 @@
 
   <div>
     <span>アバター設定</span>
-  <% if current_user.avatar.url.present? %>
+  <% if current_user.avatar.to_s.present? %>
     <div class="profileEditAvatarWrap">
-    <%= image_tag(current_user.avatar.url, class:"profileEditAvatar") %>
+    <%= image_tag(current_user.avatar.to_s, class:"profileEditAvatar") %>
     </div>
   <% end %>
     <%= f.file_field :avatar %>

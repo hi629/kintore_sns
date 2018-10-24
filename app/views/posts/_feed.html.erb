@@ -4,9 +4,9 @@
         <div class="postHeader">
             <div class="postHeaderLeft">
                 <div class="iconWrap">
-                <% if post.user.avatar.url.present? %>
+                <% if post.user.avatar.to_s.present? %>
                     <%= link_to post.user do %>
-                    <%= image_tag post.user.avatar.url, class:"icon"%>
+                    <%= image_tag post.user.avatar.to_s, class:"icon"%>
                     <% end %>
                 <% else %>
                     <%= link_to post.user do %>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="postImageWrap">
-            <%= image_tag post.image.url, class:"postImage" unless post.image.blank? %>
+            <%= image_tag post.image.to_s, class:"postImage" unless post.image.blank? %>
         </div>
         <div class="postText">
             <%= render_with_hashtags(post.text) %>

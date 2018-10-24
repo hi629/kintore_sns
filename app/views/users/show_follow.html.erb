@@ -9,7 +9,7 @@
                 <%= link_to user do %>
                     <% if  user.avatar.present? %>
                         <div class="relationshipItemImage">
-                            <%= image_tag user.avatar.url, class:"icon" %>
+                            <%= image_tag user.avatar.to_s, class:"icon" %>
                         </div>
                     <% else %>
                         <div class="relationshipItemImage">

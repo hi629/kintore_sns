@@ -15,7 +15,7 @@
         <div class="profileHeaderLeft">
             <div class="profileImage">
                 <% if  @user.avatar.present? %>
-                    <%= image_tag @user.avatar.url, class:"profileAvatar" %>
+                    <%= image_tag @user.avatar.to_s, class:"profileAvatar" %>
                 <% else %>
                     <i class="fas fa-user"></i>
                 <% end %>
@@ -58,7 +58,7 @@
     <div class="newPostItem">
         <% if !post.image.blank? %>
             <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
-                <%= image_tag(post.image.url, class:"newPostImage")%>
+                <%= image_tag(post.image.to_s, class:"newPostImage")%>
             <% end %>
         <% end %>
     </div>

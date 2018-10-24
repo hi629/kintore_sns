@@ -20,7 +20,7 @@
     <div class="newPostItem">
         <% if !post.image.blank? %>
             <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
-                <%= image_tag(post.image.url, class:"newPostImage")%>
+                <%= image_tag(post.image.to_s, class:"newPostImage")%>
             <% end %>
         <% end %>
     </div>
