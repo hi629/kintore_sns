@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     end
 
     def hashtags
-        tag = Tag.find_by(name:params[:name])
-        @posts = tag.posts
+        @tag = Tag.find_by(name:params[:name])
+        @posts = @tag.posts
     end
 
     def search
