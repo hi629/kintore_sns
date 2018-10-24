@@ -1,5 +1,5 @@
 <% @user ||= current_user %>
-<div class="profileWrap">
+<div class="profileWrap container">
     <% if user_signed_in? %>
         <% unless current_user?(@user) %>
         <div id="follow_form" class="followFormPosition">
@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<div class="newPostList">
+<div class="newPostList container">
     <% @posts.each do |post| %>
     <div class="newPostItem">
         <% if !post.image.blank? %>

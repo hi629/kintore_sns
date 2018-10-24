@@ -1,8 +1,8 @@
-<div class="welcome">
 <% if !user_signed_in? %>
-    <p><%= link_to '初めて訪れた方へ', about_path, class:"welcomeLetter" %></p>
+    <div class="welcome">
+        <p><%= link_to '初めて訪れた方へ', about_path, class:"welcomeLetter" %></p>
+    </div>
 <% end %>
-</div>
 <div class="tabWrap">
     <div class="tab container">
         <%= link_to root_path, class:"tabLeft-active" do %>
