@@ -94,3 +94,23 @@
     background-color: #FFF;
 }
 //pages#searchページに関するcssです。
+
+.searchForm{
+    font-size: 12px;
+    width:99%;
+    margin-top: 15px;
+    resize:none;
+    height:20px;
+    border:solid 1px royalblue;
+    border-radius: 4px;
+}
+.searchSubmit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:100%;
+    background-color: royalblue;
+    border:solid 1px royalblue;
+    border-radius: 4px;
+    color:#FFF;
+    cursor: pointer;
+}

@@ -26,11 +26,13 @@
                 </div>
                 <% end %>        
             <% end %>
+            <p>
             <% if user_signed_in? && @post.user.id == current_user.id %>
-                <%= link_to @post, method: :delete, data:{ confirm: "本当に消しますか？"}  do %>
+                <%= link_to @post, method: :delete, data:{ confirm: "本当に消しますか？"}, class:"postDelete"  do %>
                     <span class="icon">投稿を消す</span>
                 <% end %>
-            <% end %>                
+            <% end %>   
+            </p>             
         </div>
     </div>
     <div class="cardImageWrap"><%= image_tag(@post.image.to_s, class:"cardImage") %></div>

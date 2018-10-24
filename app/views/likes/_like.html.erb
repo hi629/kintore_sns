@@ -1,15 +1,19 @@
 <% if !current_user?(post.user) %>
     <span class="like">
     <% if !post.like?(current_user) %>
+      <br>
+      ↓これイイネボタンです。。。
       <%= form_for(post.likes.build, remote: true) do |f| %>
         <div><%= hidden_field_tag :post_id, post.id %></div>
-        <%= button_tag(class: "") do %>
-          <%= content_tag :span, "#{post.likes_count}", class: "" %>
+        <%= button_tag(class: "likeButton") do %>
+          <%= content_tag :span, "#{post.likes_count}", class: "likeButton" %>
         <% end %>
       <% end %>
     <% else %>
+    
+      ↓これイイネボタンです。。。
       <%= form_for(post.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-        <%= button_tag(class: "") do %>
+        <%= button_tag(class: "likeButton") do %>
           <%= content_tag :span, "#{post.likes_count}", class: "" %>
         <% end %>
       <% end %>

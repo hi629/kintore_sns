@@ -1,9 +1,13 @@
-<% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
-    <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
-    <p>コメント：<%= comment.body %></p>
-    <% if comment.user == current_user %>
-      <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+<div class="commentList">
+  <% comments.each do |comment| %>
+    <% unless comment.id.nil? %>
+      <div class="comment">
+        <p class="commentName">@<%= link_to "#{comment.user.username}", user_path(comment.user.id), class:"commentNameLink" %></p>
+        <p class="commentBody"><%= comment.body %></p>
+        <% if comment.user == current_user %>
+          <p class="commentDeleteWrap"><%= link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class:"commentDelete" %></p>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
-<% end %>
+</div>
