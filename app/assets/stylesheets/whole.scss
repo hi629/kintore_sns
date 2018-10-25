@@ -54,8 +54,12 @@ h2{
                 width:65%;
              }
         }
-        .titleImage{
-            width:100%;
+        .titleNameLink{
+            text-decoration: none;
+            .titleName{
+                text-align: center;
+                font-size:22px;
+            }
         }
     }
     .headerRight{

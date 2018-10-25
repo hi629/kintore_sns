@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require toastr
 //= require rails-ujs
 //= require infinite-scroll.pkgd.min
 //= require turbolinks

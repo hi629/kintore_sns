@@ -1,28 +1,29 @@
-<% if !user_signed_in? %>
+<% if user_signed_in? %>
+    <div class="tabWrap">
+        <div class="tab container">
+            <%= link_to root_path, class:"tabLeft-active" do %>
+                <div>新着</div>
+            <% end %>
+            <%= link_to posts_path, class:"tabRight" do %>
+                <div>フォロー中</div>
+            <% end %>
+        </div>
+    </div>
+    <br>
+
+    <div class="newPostList container">
+        <% @posts.each do |post| %>
+        <div class="newPostItem">
+            <% if !post.image.blank? %>
+                <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
+                    <%= image_tag(post.image.to_s, class:"newPostImage")%>
+                <% end %>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+<% else %>
     <div class="welcome">
         <p><%= link_to '初めて訪れた方へ', about_path, class:"welcomeLetter" %></p>
-    </div>
+    </div>  
 <% end %>
-<div class="tabWrap">
-    <div class="tab container">
-        <%= link_to root_path, class:"tabLeft-active" do %>
-            <div>新着</div>
-        <% end %>
-        <%= link_to posts_path, class:"tabRight" do %>
-            <div>フォロー中</div>
-        <% end %>
-    </div>
-</div>
-<br>
-
-<div class="newPostList container">
-    <% @posts.each do |post| %>
-    <div class="newPostItem">
-        <% if !post.image.blank? %>
-            <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
-                <%= image_tag(post.image.to_s, class:"newPostImage")%>
-            <% end %>
-        <% end %>
-    </div>
-    <% end %>
-</div>

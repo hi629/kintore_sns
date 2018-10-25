@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <!-- ヘッダー部分 -->
     <div class="header">
       <div class="container">    
         <div class="headerLeft">
@@ -21,8 +22,8 @@
         </div>
         <div class="headerCenter">
           <div class="title">
-            <%= link_to root_path do %>
-              <%= image_tag("LOGO.png", class:"titleImage") %>
+            <%= link_to root_path, class:"titleNameLink" do %>
+              <h1 class="titleName">PROUDEE</h1>
             <% end %>
           </div>
         </div>
@@ -41,14 +42,17 @@
           <% end %>
         </div>
       </div>
-      <p class="notice" style="margin:0;"><%= notice %></p>
-      <p class="alert" style="margin:0;"><%= alert %></p>
+      <!-- flashメッセージ -->
+      <% unless flash.empty? %>
+        <script type="text/javascript">
+          <% flash.each do |key, value| %>
+            <% type = key.to_s.gsub('alert','error').gsub('notice','success') %>
+            toastr['<%= type %>']('<%= value %>');
+          <% end %>
+        </script>
+      <% end %>
     </div>
-
-    
       <%= yield %>
-    
-
     <div class="footer">
       <div class="footerElement container">
         <div class="home">
