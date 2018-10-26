@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+100.times do |i|
+    Post.create!(
+        user_id:1,
+        text:"##{i}seeds",
+        image:File.open("./app/assets/images/test.jpg")
+    )
+end

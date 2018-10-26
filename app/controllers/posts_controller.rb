@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     def create
         @post = current_user.posts.build(post_params)
         if @post.save
-            redirect_to root_path, notice:"Post was successfully created."
+            redirect_to root_path, notice:"投稿しました"
         else
             render :new
         end
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
     def destroy
         @post.destroy
-        redirect_to posts_url, notice:"post was successfully destroyed"
+        redirect_to root_path, alert:"削除しました"
     end
 
     private

@@ -47,6 +47,14 @@
         }
     }
 }
+#posts{
+    .post{
+        i{
+            display: none;
+        }
+        
+    }
+}
 
 .postText{
     margin-top:20px;
@@ -111,6 +119,6 @@
 }
 
 // post#new
-.newPostWrap{
+.squarePostWrap{
     margin-top: 15px;
 }

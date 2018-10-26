@@ -11,19 +11,23 @@
     </div>
     <br>
 
-    <div class="newPostList container">
-        <% @posts.each do |post| %>
-        <div class="newPostItem">
-            <% if !post.image.blank? %>
-                <%= link_to(post, class:"newPostLink") do %><!-- プレビューさせる -->
-                    <%= image_tag(post.image.to_s, class:"newPostImage")%>
+    <div class="squarePostList container">
+            <% @posts.each do |post| %>
+            <div class="squarePostItem">
+                <% if !post.image.blank? %>
+                    <%= link_to(post, class:"squarePostLink") do %><!-- プレビューさせる -->
+                        <%= image_tag(post.image.to_s, class:"squarePostImage")%>
+                    <% end %>
                 <% end %>
-            <% end %>
-        </div>
-        <% end %>
+            </div>
+            <% end %>        
     </div>
+    <%= paginate @posts %>
 <% else %>
     <div class="welcome">
         <p><%= link_to '初めて訪れた方へ', about_path, class:"welcomeLetter" %></p>
     </div>  
 <% end %>
+
+
+
