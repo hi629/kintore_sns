@@ -1,21 +1,12 @@
 //homeに関するcssです。
 
 //welcome
-.welcome{
-    padding-top:30px;
-    padding-bottom: 30px;
-    background-color: lightblue;
-    p{
-        margin: 0;
-        text-align: center;
-    }
-}
 .welcomeLetter{
     text-decoration: none;
-    color: #FFF;
-    font-size: 14px;
-    background-color: royalblue;
-    padding:5px;
+    color: royalblue;
+    font-size: 10px;
+    margin-left: 10px;
+    padding:8px;
     border:1px solid royalblue;
     border-radius: 4px;
 }
