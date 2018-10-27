@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :authenticate_user!, except:[:show]
 
     def index
-        @posts_all = Post.all.includes(:user, :likes, :like_users) # include...N+1問題対策にgem bullet利用
+        @posts_all = Post.all.includes(:user, :like_users) # include...N+1問題対策にgem bullet利用
         @following_users = current_user.following
         @posts = @posts_all.where(user_id:@following_users).order("created_at DESC")
     end

@@ -1,10 +1,24 @@
 // Place all the styles related to the Likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.fa-thumbs-up{
+    color:royalblue;
+}
 
+.fa-thumbs-up-after{
+    color:#fff;
+}
 .likeButton{
     margin: 15px;
     background-color: #fff;
+    border: 1px solid royalblue;
+    border-radius: 4px;
+}
+
+.likeButton-after{
+    margin: 15px;
+    color:#fff;
+    background-color: royalblue;
     border: 1px solid royalblue;
     border-radius: 4px;
 }
