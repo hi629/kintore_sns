@@ -10,6 +10,7 @@ ja:
               blank: 名前を入力してください
             username:
               blank: 半角英数字でユーザーIDを入力してください
+              taken: すでに使われているIDです。他のIDを入力してください
             password:
               blank: パスワードを入力してください
   helpers: 

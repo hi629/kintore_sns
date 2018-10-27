@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates :username, presence: true
+  validates_uniqueness_of :username
   validates :name, presence: true
 
   # Include default devise modules. Others available are:
