@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @posts = @user.posts.all.order('created_at DESC')
+        @posts = @user.posts.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 21)
+        # @posts = Post.order("created_at DESC").paginate(:page => params[:page], :per_page => 21)
     end
 
     def following

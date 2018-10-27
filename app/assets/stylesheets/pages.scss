@@ -48,47 +48,43 @@
     width: 50%;
 }
 
-// .squareWrap{
+.squareWrap{
     
-// }
+}
 
-// .squarePostList{
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap:wrap;
-// }
-// .squarePostItem{
-//     flex-basis: 33.3%;
-//     position: relative;
-// }
-// // 正方形にトリミング
-// .squarePostItem:before{
-//     content:"";
-//     display:block;
-//     padding-top:100%;
-// }
-// .squarePostLink{
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     overflow: hidden;
-// }
-
-// .squarePostImage{
-//     width:100%;
-//     height: 100%;
-//     line-height:1;
-//     position: absolute;
-//     bottom:0;
-//     border: 1px solid #fff;
-//     object-fit: cover;
-// }
+.squarePostList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.squarePostItem{
+    flex-basis: 33.3%;
+    position: relative;
+}
+// 正方形にトリミング
+.squarePostItem:before{
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+.squarePostLink{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 .squarePostImage{
-    width:30%;
+    width:100%;
+    height: 100%;
+    line-height:1;
+    position: absolute;
+    bottom:0;
+    border: 1px solid #fff;
+    object-fit: cover;
 }
 
 //pages#aboutページに関するcssです。

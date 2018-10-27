@@ -1,0 +1,7 @@
+<div class="squarePostItem">
+    <% if !post.image.blank? %>
+        <%= link_to(post, class:"squarePostLink") do %><!-- プレビューさせる -->
+            <%= image_tag(post.image.to_s, class:"squarePostImage")%>
+        <% end %>
+    <% end %>
+</div>

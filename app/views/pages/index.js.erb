@@ -1,1 +1,2 @@
-$("#posts").append("<tbody class="page"><%= escape_javascript(render(@posts)) %></tbody>");
+$('#pagesIndex').append('<%= escape_javascript render(@posts) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@posts) %>');

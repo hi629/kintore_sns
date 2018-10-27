@@ -53,16 +53,7 @@
     </div>
 </div>
 
-<div class="squarePostList container" id="pagesPostList">
-    <div class="page">
-        <% @posts.each do |post| %>
-        <div class="squarePostItem">
-            <% if !post.image.blank? %>
-                <%= link_to(post, class:"squarePostLink") do %><!-- プレビューさせる -->
-                    <%= image_tag(post.image.to_s, class:"squarePostImage")%>
-                <% end %>
-            <% end %>
-        </div>
-        <% end %>    
-    </div>
+<div class="squarePostList container" id="usersShow">
+    <%= render @posts %>
 </div>
+<%= will_paginate @posts %>

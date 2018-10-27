@@ -7,14 +7,7 @@
     </div>
 <% end %>
 
-<div class="squarePostList container">
-    <% @posts.each do |post| %>
-    <div class="squarePostItem">
-        <% if !post.image.blank? %>
-            <%= link_to(post, class:"squarePostLink") do %><!-- プレビューさせる -->
-                <%= image_tag(post.image.to_s, class:"squarePostImage")%>
-            <% end %>
-        <% end %>
-    </div>
-    <% end %>
+<div class="squarePostList container" id="pagesSearch">
+    <%= render @posts %>
 </div>
+<%= will_paginate @posts %>
