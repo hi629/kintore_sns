@@ -5,11 +5,11 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true , input_html: { autocomplete: "email", class:"formInput" }, placeholder:"Eメール", label:false %>
-      <%= f.input :name, required: true, autofocus: true , input_html: { class:"formInput" }, placeholder:"名前", label:false %>
-      <%= f.input :username, required: true, autofocus: true , input_html: { class:"formInput" }, placeholder:"ユーザーID", label:false %>
-      <%= f.input :password, required: true, input_html: { autocomplete: "new-password", class:"formInput" }, label:false, placeholder:"6文字以上のパスワード" %>
-      <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class:"formInput" }, label:false, placeholder:"パスワードの確認" %>
+      <%= f.input :email, required: true, autofocus: true , input_html: { autocomplete: "email", class:"formInput" }, placeholder:"Eメール(必須)", label:false %>
+      <%= f.input :name, required: true, autofocus: true , input_html: { class:"formInput" }, placeholder:"名前(必須)", label:false %>
+      <%= f.input :username, required: true, autofocus: true , input_html: { class:"formInput" }, placeholder:"ユーザーID(必須)", label:false %>
+      <%= f.input :password, required: true, input_html: { autocomplete: "new-password", class:"formInput" }, label:false, placeholder:"6文字以上のパスワード(必須)" %>
+      <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class:"formInput" }, label:false, placeholder:"パスワードの確認(必須)" %>
     </div>
 
     <div class="form-actions">

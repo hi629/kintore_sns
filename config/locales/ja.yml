@@ -1,7 +1,20 @@
-ja:
-  helpers:
-    label:
-      user:
+ja: 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: メールアドレスを入力してください
+            name:
+              blank: 名前を入力してください
+            username:
+              blank: 半角英数字でユーザーIDを入力してください
+            password:
+              blank: パスワードを入力してください
+  helpers: 
+    label: 
+      user: 
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(確認)
