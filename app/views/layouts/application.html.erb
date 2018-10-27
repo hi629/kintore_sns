@@ -14,11 +14,6 @@
     <div class="header">
       <div class="container">    
         <div class="headerLeft">
-          <div class="post">
-            <%= link_to new_post_path do %>
-              <i class="far fa-plus-square"></i>
-            <% end %>
-          </div>
         </div>
         <div class="headerCenter">
           <div class="title">
@@ -65,6 +60,11 @@
           <%= link_to search_path do %>
             <i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i>
           <% end %>
+        </div>
+        <div class="post">
+            <%= link_to new_post_path do %>
+              <i class="fas fa-plus-square  <%= controller.action_name == 'new' ? 'active': 'inactive'%>""></i>
+            <% end %>
         </div>
         <div class="notice">
           <%= link_to notifications_path do %>
