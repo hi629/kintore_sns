@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   has_many :likes, dependent: :destroy
 
+  has_many :notifications, dependent: :destroy
+
   def follow(other_user)
     following << other_user
   end

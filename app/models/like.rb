@@ -4,4 +4,6 @@ class Like < ApplicationRecord
     counter_culture :post
     validates :user_id, presence:true
     validates :post_id, presence:true
+
+    has_many :notifications, dependent: :destroy
 end

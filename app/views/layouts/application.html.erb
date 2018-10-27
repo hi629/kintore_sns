@@ -32,6 +32,7 @@
             <p class="headerRightLogoutWrap">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"headerRightLogout" %>
             </p>
+            
           <% else %>
               <button class="headerRightLoginWrap">
                 <%= link_to "ログイン", new_user_session_path, class:"headerRightLogin" %>
@@ -65,7 +66,14 @@
             <i class="fas fa-search <%= controller.action_name == 'search' ? 'active': 'inactive'%>"></i>
           <% end %>
         </div>
-        <div class="notice"><i class="fas fa-bell <%= controller.action_name == 'notice' ? 'active': 'inactive'%>"></i></div>
+        <div class="notice">
+          <%= link_to notifications_path do %>
+            <% if user_signed_in? &&  current_user.notifications.where(read: false).count != 0 %>
+              <span class="noticeCount"><%= current_user.notifications.where(read: false).count %></span>
+            <% end %>
+            <i class="fas fa-bell <%= controller.action_name == 'list' ? 'active': 'inactive'%>"></i>
+          <% end %>
+        </div>
         <div class="profile">
           <% if user_signed_in? %>
             <%= link_to user_path(current_user) do %>
