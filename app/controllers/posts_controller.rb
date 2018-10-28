@@ -12,7 +12,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         @user = @post.user
         @comment = Comment.new
-        @comments = @post.comments
+        @comments = @post.comments.includes(:user)
     end
 
     def new
