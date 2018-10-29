@@ -50,6 +50,7 @@
     <div class="profileBottom">
         <p class="profileName"><%= @user.name %></p>
         <p class="profileText"><%= @user.introduce %></p>
+        <div id="calendar"></div>
     </div>
 </div>
 
@@ -57,3 +58,18 @@
     <%= render @posts %>
 </div>
 <%= will_paginate @posts %>
+
+<script>
+$(function(){
+    var user_id = <%= @user.id %>
+    $('#calendar').fullCalendar({
+        displayEventTime:false,
+        displayEventTitle:true,
+        events: `/users/${user_id}.json`,
+        eventRender:function(event, element){
+            var dataToFind = moment(event.start).format('YYYY-MM-DD');
+            $("td[data-date='"+dataToFind+"']").addClass('activeDay');
+        }
+     });
+})
+</script>
