@@ -134,3 +134,18 @@
     background-color:royalblue !important;
     color:#FFF;
 }
+
+.fc-event-container{
+    a{
+        display: none;
+    }
+}
+.fc-title{
+    display: none;
+    font-size:10px;
+}
+
+#calendar{
+    width:90%;
+    margin: 0 auto;
+}
