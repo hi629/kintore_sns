@@ -6,6 +6,7 @@ ja:
           attributes:
             email:
               blank: メールアドレスを入力してください
+              taken: すでに使われているメールアドレスです
             name:
               blank: 名前を入力してください
             username:
@@ -13,6 +14,8 @@ ja:
               taken: すでに使われているIDです。他のIDを入力してください
             password:
               blank: パスワードを入力してください
+      messages:
+        record_invalid:レコードが不正です
   helpers: 
     label: 
       user: 
