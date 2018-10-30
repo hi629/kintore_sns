@@ -15,7 +15,7 @@ ja:
             password:
               blank: パスワードを入力してください
       messages:
-        record_invalid:レコードが不正です
+        record_invalid: レコードが不正です
   helpers: 
     label: 
       user: 
