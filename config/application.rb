@@ -17,7 +17,7 @@ module MuscleShare
     # 認証トークンをremoteフォームに埋め込む（jsがブラウザでOFFになっている場合に備えて）
     config.action_view.embed_authenticity_token_in_remote_forms = true
 
-    config.i18n.default_locale = :ja
+    # config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
   end
 end

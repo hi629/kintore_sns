@@ -6,15 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-8.times do |i|
-    user = User.new(email:"test#{i}.com", name:"test#{i}", username:"test#{i}test#{i}", password:"12345678")
-    user.save!
-    # 10.times do |j|
-    #     Post.create!(
-    #         user_id:i,
-    #         text:"##{j}seeds user_id:#{j}",
-    #         image:File.open("./app/assets/images/test#{j+1}.jpg")
-    #     )
-    # end
+20.times do |i|
+    User.create!(id:i+1, email:"test#{i}@test.com", name:"test#{i}", username:"test#{i}test#{i}", password:"12345678")
+    10.times do |j|
+        Post.create!(
+            user_id:i+1,
+            text:"##{j}seeds user_id#{j}",
+            image:File.open("./app/assets/images/test#{j+1}.jpg")
+        )
+    end
 end
 
