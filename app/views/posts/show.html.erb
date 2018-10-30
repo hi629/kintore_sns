@@ -36,7 +36,9 @@
         </div>
     </div>
     <div class="cardImageWrap"><%= image_tag(@post.image.to_s, class:"cardImage") %></div>
-    <%= render "likes/like", post: @post %>
+    <% if user_signed_in? %>
+        <%= render "likes/like", post: @post %>
+    <% end %>
     <div class="cardBottom">
         <div><%= render_with_hashtags(@post.text) %></div>
         <div id="comments_area"><%= render partial:'comments/index', locals:{ comments: @comments} %></div>
