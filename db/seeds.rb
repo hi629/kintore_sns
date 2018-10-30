@@ -12,11 +12,4 @@
         username:"test#{i}test#{i}",
         password:"12345678"
     )
-    10.times do |j|
-        Post.create!(
-            user_id:i,
-            text:"##{j}seeds user_id:#{j}",
-            image:File.open("./app/assets/images/test#{j+1}.jpg")
-        )
-    end
 end
