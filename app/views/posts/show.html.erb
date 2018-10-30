@@ -44,7 +44,9 @@
         <div id="comments_area"><%= render partial:'comments/index', locals:{ comments: @comments} %></div>
         <% if user_signed_in? %>
             <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-            <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+            <% if @post.user.id != current_user.id %>
+                <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+            <% end %>
         <% else %>
             <p>ログイン/登録してコメントを書き込みませんか？</p>
         <% end %>
