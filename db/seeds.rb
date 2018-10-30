@@ -5,10 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times do |i|
-    Post.create!(
-        user_id:5,
-        text:"##{i}seeds user_id:5",
-        image:File.open("./app/assets/images/test#{i+1}.jpg")
+8.times do |i|
+    User.create!(
+        email: "test#{i}.com",
+        name:"test#{i}",
+        username:"test#{i}test#{i}",
+        password:"12345678"
     )
+    10.times do |j|
+        Post.create!(
+            user_id:i,
+            text:"##{j}seeds user_id:#{j}",
+            image:File.open("./app/assets/images/test#{j+1}.jpg")
+        )
+    end
 end
