@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 2.times do |i|
-    User.create!(id:i+2, email:"test#{i}@test.com", name:"test#{i}", username:"test#{i}test#{i}", password:"12345678")
+    User.create!(email:"test#{i}@test.com", name:"test#{i}", username:"test#{i}test#{i}", password:"12345678")
     10.times do |j|
         Post.create!(
             user_id:i+2,
