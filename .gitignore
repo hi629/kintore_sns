@@ -21,3 +21,4 @@
 # シークレットキーがあるファイルを無視する
 carrierwave.rb
 secrets.yml
+devise.rb
