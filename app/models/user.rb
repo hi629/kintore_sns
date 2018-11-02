@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :username, presence: true
-  validates_uniqueness_of :username
+  validates_uniqueness_of :username, format: {with: /^[a-zA-Z0-9]+$/}
   validates :name, presence: true
 
   # Include default devise modules. Others available are:

@@ -17,3 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+
+# シークレットキーがあるファイルを無視する
+carrierwave.rb
+secrets.yml
